@@ -4,13 +4,13 @@
    contain the root `toctree` directive.
 
 #############################
-**miblab-data** documentation
+**miblab-dl** documentation
 #############################
 
-A python interface for reading open-access data repositories from miblab projects
+A python interface for miblab's trained deep learning models
 
 
-``miblab-data`` is distributed under the 
+``miblab-dl`` is distributed under the 
 `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ license - a 
 permissive, free license that allows users to use, modify, and 
 distribute the software without restrictions.
