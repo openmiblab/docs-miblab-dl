@@ -1,4 +1,3 @@
-miblab-dl
 autodocsumm
 docutils
 myst-parser
@@ -15,3 +14,9 @@ sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
 #nbsphinx
 sphinx-gallery
+dbdicom
+
+jupytext
+ipykernel
+nbconvert
+nbclient

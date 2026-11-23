@@ -3,7 +3,9 @@
 
 ### package builds
 .venv/*
-docs/build
+docs/build/
+docs/source/generated/
+docs/source/api/
 tests/tmp/*
 tests/export/*
 

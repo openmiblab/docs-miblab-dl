@@ -8,7 +8,7 @@
 project = 'miblab-dl'
 copyright = '2026, miblab.org'
 author = 'miblab.org'
-release = '0.0.10'
+release = '0.0.11'
 
 # -- Path setup --------------------------------------------------------------
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -134,7 +134,9 @@ source_suffix = ['.rst', '.md']
 # of the sidebar.
 html_logo = '_static/miblab-gemini.jpg'
 
-
+# Do not execute notebooks
+extensions = ["myst_nb"]   # or "nbsphinx"
+nb_execution_mode = "off"  # nbsphinx: nbsphinx_execute = "never"
 
 # #### THIS CODE BLOCK ADDED TO FIX pandoc INSTALLATION ISSUES #####
 # #### Pandoc is needed to render jupyter notebooks with nbsphinx
