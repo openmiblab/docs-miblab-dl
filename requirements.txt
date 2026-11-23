@@ -20,3 +20,4 @@ jupytext
 ipykernel
 nbconvert
 nbclient
+myst-nb

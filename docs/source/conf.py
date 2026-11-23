@@ -17,6 +17,13 @@ release = '0.0.11'
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../src'))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Execute new or changed examples locally. On CI the committed
+# notebooks are used as they are (GitHub sets CI=true).
+if not os.environ.get("CI") and not os.environ.get("SKIP_EXAMPLES"):
+    import build_examples
+    build_examples.build()
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
