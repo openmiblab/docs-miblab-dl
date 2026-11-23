@@ -8,11 +8,3 @@
 
 .. autofunction:: totseg
 
-
-
-
-
-.. minigallery:: miblab_dl.totseg
-   :add-heading:
-
-

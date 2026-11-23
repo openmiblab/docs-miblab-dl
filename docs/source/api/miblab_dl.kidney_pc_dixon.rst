@@ -8,11 +8,3 @@
 
 .. autofunction:: kidney_pc_dixon
 
-
-
-
-
-.. minigallery:: miblab_dl.kidney_pc_dixon
-   :add-heading:
-
-

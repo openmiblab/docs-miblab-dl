@@ -31,18 +31,18 @@ if not os.environ.get("CI") and not os.environ.get("SKIP_EXAMPLES"):
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones
 extensions = [
-    'sphinx.ext.napoleon', # parsing of NumPy and Google style docstrings
-    'sphinx.ext.autodoc', # sphinx autodocumentation generation
-    'sphinx.ext.autosummary', # generates function/method/attribute summary lists
-    'sphinx.ext.viewcode', # viewing source code
-    'sphinx.ext.intersphinx', # generate links to the documentation of objects in external projects
-    'autodocsumm',
-    'myst_parser', # parser for markdown language
-    'sphinx_copybutton', # copy button for code blocks
-    'sphinx_design', # sphinx web design components
-    'sphinx_remove_toctrees', # selectively remove toctree objects from pages
-    'sphinx_gallery.gen_gallery',
+    'sphinx.ext.napoleon',      # parsing of NumPy and Google style docstrings
+    'sphinx.ext.autodoc',       # sphinx autodocumentation generation
+    'sphinx.ext.autosummary',   # generates function/method/attribute summary lists
+    'sphinx.ext.viewcode',      # viewing source code
+    'sphinx.ext.intersphinx',   # generate links to the documentation of objects in external projects
+    'sphinx_copybutton',        # copy button for code blocks
+    'sphinx_design',            # sphinx web design components
+    'sphinx_remove_toctrees',   # selectively remove toctree objects from pages
+    'myst_nb',                  # renders both .md and .ipynb files
 ]
+
+autosummary_generate = True
 
 # Settings for sphinx-gallery, see
 # https://sphinx-gallery.github.io/stable/getting_started.html#create-simple-gallery
@@ -134,46 +134,9 @@ html_css_files = [
     'teams.css', # templates for the teams mosaic in About
 ]
 
-# The suffix(es) of source filenames.
-source_suffix = ['.rst', '.md']
-
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 html_logo = '_static/miblab-gemini.jpg'
 
 # Do not execute notebooks
-extensions = ["myst_nb"]   # or "nbsphinx"
 nb_execution_mode = "off"  # nbsphinx: nbsphinx_execute = "never"
-
-# #### THIS CODE BLOCK ADDED TO FIX pandoc INSTALLATION ISSUES #####
-# #### Pandoc is needed to render jupyter notebooks with nbsphinx
-
-# # For details see:
-# # https://stackoverflow.com/questions/62398231/building-docs-fails-due-to-missing-pandoc
-
-# import os
-# from inspect import getsourcefile
-
-# # Get path to directory containing this file, conf.py.
-# DOCS_DIRECTORY = os.path.dirname(os.path.abspath(getsourcefile(lambda: 0)))
-
-# def ensure_pandoc_installed(_):
-#     import pypandoc
-
-#     # Download pandoc if necessary. If pandoc is already installed and on
-#     # the PATH, the installed version will be used. Otherwise, we will
-#     # download a copy of pandoc into docs/bin/ and add that to our PATH.
-#     pandoc_dir = os.path.join(DOCS_DIRECTORY, "bin")
-#     # Add dir containing pandoc binary to the PATH environment variable
-#     if pandoc_dir not in os.environ["PATH"].split(os.pathsep):
-#         os.environ["PATH"] += os.pathsep + pandoc_dir
-#     pypandoc.ensure_pandoc_installed(
-#         #quiet=True,
-#         targetfolder=pandoc_dir,
-#         delete_installer=True,
-#     )
-
-# def setup(app):
-#     app.connect("builder-inited", ensure_pandoc_installed)
-
-# #### END OF CODE BLOCK ADDED TO FIX pandoc INSTALLATION ISSUES #####

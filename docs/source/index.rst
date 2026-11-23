@@ -22,5 +22,5 @@ distribute the software without restrictions.
    
    user_guide/index
    reference/index
-   examples/plot_kidney_pc_dixon
+   examples/index
    about/index

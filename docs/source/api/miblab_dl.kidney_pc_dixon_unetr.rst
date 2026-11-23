@@ -8,11 +8,3 @@
 
 .. autofunction:: kidney_pc_dixon_unetr
 
-
-
-
-
-.. minigallery:: miblab_dl.kidney_pc_dixon_unetr
-   :add-heading:
-
-

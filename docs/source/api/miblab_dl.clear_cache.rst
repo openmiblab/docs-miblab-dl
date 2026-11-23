@@ -8,11 +8,3 @@
 
 .. autofunction:: clear_cache
 
-
-
-
-
-.. minigallery:: miblab_dl.clear_cache
-   :add-heading:
-
-

@@ -8,11 +8,3 @@
 
 .. autofunction:: fatwater
 
-
-
-
-
-.. minigallery:: miblab_dl.fatwater
-   :add-heading:
-
-
