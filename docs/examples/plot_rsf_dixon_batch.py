@@ -15,7 +15,8 @@ from _data_loader import dixon_batch_case
 # ## Download data
 
 # %%
-input_folder = dixon_batch_case()
+case='Dixon'
+input_folder = dixon_batch_case(case)
 output_folder = dl.get_cache_dir('Dixon_batch_results')
 
 # %% [markdown]
@@ -29,7 +30,6 @@ dl.rsf_dixon_batch(input_folder, output_folder)
 
 # %%
 # Read the arrays
-case = 'Dixon'   # the case name used when the files were written
 out_phase = vreg.read_nifti(input_folder / f'{case}_0000.nii.gz').values
 label_image = vreg.read_nifti(output_folder / f'{case}.nii.gz').values
 
