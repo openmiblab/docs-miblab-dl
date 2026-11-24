@@ -18,7 +18,7 @@ def dixon_case():
     return array, spacing
 
 def dixon_batch_case(case='Dixon'):
-    """Write the Dixon test case as NIfTI files for kidney_pc_dixon_batch.
+    """Write the Dixon test case as NIfTI files for kidney_dixon_batch.
 
     The four channels are saved as ``<case>_0000.nii.gz`` (out-phase),
     ``_0001`` (in-phase), ``_0002`` (water) and ``_0003`` (fat). The voxel
@@ -41,8 +41,5 @@ def dixon_batch_case(case='Dixon'):
         # When new model is implemented, check that this works correctly
         v = vreg.volume(volume.values, np.eye(4))
         vreg.write_nifti(v, nifti_file)
-        #vreg.write_nifti(volume, nifti_file)
-        #nii = nib.Nifti1Image(volume.values.astype(np.float32), affine)
-        #nib.save(nii, batch_folder / f'{case}_{i:04d}.nii.gz')
 
     return batch_folder

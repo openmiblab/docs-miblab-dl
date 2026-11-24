@@ -14,9 +14,11 @@ Segmentation
    :template: autosummary.rst
 
    totseg
-   kidney_pc_dixon
-   kidney_pc_dixon_batch
-   kidney_pc_dixon_unetr
+   kidney_dixon
+   kidney_dixon_batch
+   kidney_dixon_unetr
+   rsf_dixon
+   rsf_dixon_batch
 
 
 

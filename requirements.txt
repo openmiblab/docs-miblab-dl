@@ -20,6 +20,7 @@ miblab_plot
 
 jupytext
 ipykernel
+ipywidgets
 nbconvert
 nbclient
 myst-nb
