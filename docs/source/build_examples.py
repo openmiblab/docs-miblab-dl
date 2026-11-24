@@ -1,5 +1,8 @@
-"""Convert docs/examples/*.py (percent format) to executed notebooks."""
-import os
+"""Convert docs/examples/*.py (percent format) to executed notebooks.
+
+Files whose names start with an underscore are helper modules that the
+examples import. They are not converted, but changing one rebuilds all examples.
+"""
 from pathlib import Path
 
 import jupytext
@@ -13,9 +16,17 @@ KERNEL = "python3"  # the kernel of the active venv, provided ipykernel is insta
 
 def build(force=False):
     OUT.mkdir(parents=True, exist_ok=True)
+
+    # Helper modules are not examples, but the examples depend on them
+    helpers = list(SRC.glob("_*.py"))
+    newest_helper = max((h.stat().st_mtime for h in helpers), default=0)
+
     for script in sorted(SRC.glob("*.py")):
+        if script.name.startswith("_"):
+            continue
         nb_path = OUT / (script.stem + ".ipynb")
-        up_to_date = nb_path.exists() and nb_path.stat().st_mtime >= script.stat().st_mtime
+        source_mtime = max(script.stat().st_mtime, newest_helper)
+        up_to_date = nb_path.exists() and nb_path.stat().st_mtime >= source_mtime
         if up_to_date and not force:
             continue
         print(f"Executing {script.name} -> {nb_path.name}")

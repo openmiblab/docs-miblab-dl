@@ -1,39 +1,46 @@
 # %% [markdown]
-# # Kidney PC Dixon
+# # Kidney on Dixon: case-by-case processing
 #
 # This example shows the use of the {py:func}`~miblab_dl.kidney_pc_dixon` model to 
 # segment kidney parenchyma on Dixon data.
 
-# %%
+# %% 
 import numpy as np
-import dbdicom as db
 import miblab_dl as dl
+from miblab_plot import mosaic_overlay
+
+from _data_loader import dixon_case
 
 # %% [markdown]
-# ## Download test data
+# ## Download data
 
 # %%
-folder = dl.fetch('Dixon')
+array_4d, spacing = dixon_case()
 
 # %% [markdown]
-# ## Read DICOM data in a 4D array in the correct order
+# ## Predict kidney masks
 
 # %%
-study = db.studies(folder)[0]
-series = [
-    'Dixon_post_contrast_out_phase', 
-    'Dixon_post_contrast_in_phase', 
-    'Dixon_post_contrast_water',
-    'Dixon_post_contrast_fat',
-]
-arrays = [db.pixel_data(study + [s]) for s in series]
-array = np.stack(arrays, axis=-1)
+# TODO: Check why results are incorrect when the correct spacing is given
+# label_image = dl.kidney_pc_dixon(array, spacing, verbose=False)
+label_image = dl.kidney_pc_dixon(array_4d, verbose=False)
+
+# %%
+# ## Sanity check on the results
+# assert np.sum(label_image==1) == 79285
+print(np.sum(label_image==1))
 
 # %% [markdown]
-# ## Create kidney masks
+# ## Display result using mosaic overlay
 
 # %%
-mask = dl.kidney_pc_dixon(array, verbose=True)
+# %matplotlib inline
+in_phase = array_4d[...,1]
 
-# %%
-assert np.sum(mask==1) == 79285
+mosaic_overlay(
+    in_phase,
+    label_image,
+    margin=[16,16,2],
+    opacity=0.4,
+    verbose=0,
+)

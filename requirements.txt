@@ -14,7 +14,9 @@ sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
 #nbsphinx
 sphinx-gallery
+
 dbdicom
+miblab_plot
 
 jupytext
 ipykernel

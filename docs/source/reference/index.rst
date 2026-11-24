@@ -15,6 +15,7 @@ Segmentation
 
    totseg
    kidney_pc_dixon
+   kidney_pc_dixon_batch
    kidney_pc_dixon_unetr
 
 
@@ -37,5 +38,6 @@ Utilities
    :template: autosummary.rst
    
    clear_cache
+   get_cache_dir
 
 
