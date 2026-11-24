@@ -2,9 +2,9 @@
 About
 #####
 
-************
-Contributors
-************
+***********
+Maintainers
+***********
 
 .. include:: contrib.inc
 
