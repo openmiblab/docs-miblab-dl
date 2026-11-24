@@ -32,7 +32,8 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-          pip install -e pckg-miblab-dl --no-deps
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e pckg-miblab-dl
           pip list
 
       - name: Build Sphinx HTML
