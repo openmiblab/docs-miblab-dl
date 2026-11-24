@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Kidney on Dixon: case-by-case processing
+# # Kidney on Dixon (case-by-case)
 #
 # This example shows the use of the {py:func}`~miblab_dl.kidney_dixon` model to 
 # segment kidney parenchyma on Dixon data.

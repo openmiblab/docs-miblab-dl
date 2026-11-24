@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Kidney on Dixon: batch processing
+# # Kidney on Dixon (batch)
 #
 # This example shows the use of the {py:func}`~miblab_dl.kidney_dixon_batch` model to 
 # segment kidney parenchyma on Dixon data.

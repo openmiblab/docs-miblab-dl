@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Kidney on Dixon: batch processing
+# # Renal sinus fat on Dixon (batch)
 #
 # This example shows the use of the {py:func}`~miblab_dl.rsf_dixon_batch` model to 
 # segment renal sinus fat on Dixon data.
@@ -19,7 +19,7 @@ input_folder = dixon_batch_case()
 output_folder = dl.get_cache_dir('Dixon_batch_results')
 
 # %% [markdown]
-# ## Predict kidney masks
+# ## Predict renal sinus fat masks
 
 # %%
 dl.rsf_dixon_batch(input_folder, output_folder)
