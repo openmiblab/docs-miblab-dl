@@ -25,6 +25,7 @@ if not os.environ.get("CI") and not os.environ.get("SKIP_EXAMPLES"):
     import build_examples
     build_examples.build()
 
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
