@@ -40,8 +40,8 @@ label_image = vreg.read_nifti(output_folder / f'{case}.nii.gz').values
 colors = [
     [1.0, 0.0, 0.0, 0.6],   # red
     [0.0, 1.0, 0.0, 0.6],   # green
-    [1.0, 0.0, 0.0, 0.6],   # red
     [0.0, 1.0, 0.0, 0.6],   # green
+    [1.0, 0.0, 0.0, 0.6],   # red
 ]
 mosaic_overlay(
     out_phase,
