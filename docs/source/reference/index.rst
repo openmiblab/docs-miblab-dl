@@ -21,7 +21,7 @@ Segmentation (case-by-case)
 
 
 Segmentation (batch)
--------------------
+--------------------
 
 .. autosummary::
    :toctree: ../api/
