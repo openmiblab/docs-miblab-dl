@@ -1,8 +1,8 @@
 # %% [markdown]
-# # Kidney on Dixon (case)
+# # Renal sinus fat from kidney convex hull
 #
-# This example shows the use of the {py:func}`~miblab_dl.kidney_dixon` model to 
-# segment kidney parenchyma on Dixon data.
+# This example shows the use of the {py:func}`~miblab_dl.rsf_candidates` 
+# function to automatically preselect an estimate of the renal sinus fat. 
 
 # %% 
 import numpy as np
@@ -67,7 +67,7 @@ mosaic_overlay(
 
 # %%
 # %matplotlib inline
-rsf_candidates = dl.rsf_candidates(fat, water, kidneys, fat_threshold=0.25)
+rsf_candidates = dl.rsf_candidates(fat, water, kidneys, fat_threshold=0.2)
 rsf_candidates[rsf_candidates > 0] += 2
 label_image = np.where(rsf_candidates > 0, rsf_candidates, kidneys)
 mosaic_overlay(
