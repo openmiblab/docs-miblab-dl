@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Renal sinus fat on Dixon (case-by-case)
+# # Renal sinus fat on Dixon (case)
 #
 # This example shows the use of the {py:func}`~miblab_dl.rsf_dixon` model to 
 # segment renal sinus fat on Dixon data.

@@ -8,7 +8,7 @@
 project = 'miblab-dl'
 copyright = '2026, miblab.org'
 author = 'miblab.org'
-release = '0.0.12'
+release = '0.0.13'
 
 # -- Path setup --------------------------------------------------------------
 # If extensions (or modules to document with autodoc) are in another directory,
