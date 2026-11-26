@@ -8,13 +8,14 @@
 project = 'miblab-dl'
 copyright = '2026, miblab.org'
 author = 'miblab.org'
-release = '0.0.16'
+release = '0.0.17'
 
 # -- Path setup --------------------------------------------------------------
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here
 import os
+import re
 import sys
 sys.path.insert(0, os.path.abspath('../../src'))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -141,3 +142,34 @@ html_logo = '_static/miblab-gemini.jpg'
 
 # Do not execute notebooks
 nb_execution_mode = "off"  # nbsphinx: nbsphinx_execute = "never"
+
+
+# Remove emoji's for the pdf build
+_emoji = re.compile(
+    "["
+    "\U0001F000-\U0001FAFF"   # emoji, symbols, pictographs, flags
+    "\u2190-\u21FF"           # arrows (↔, ↩, ...)
+    "\u2300-\u23FF"           # misc technical (⏳, ⌚, ⏰, ...)
+    "\u25A0-\u25FF"           # geometric shapes (▶, ◀, ...)
+    "\u2600-\u27BF"           # misc symbols and dingbats (✅, ⚠, ✔, ...)
+    "\u2900-\u297F"           # supplemental arrows
+    "\u2B00-\u2BFF"           # misc symbols and arrows (⭐, ⬆, ...)
+    "\u200D\u20E3\uFE0E\uFE0F"  # joiner, keycap, variation selectors
+    "]"
+)
+
+def strip_emoji(app, docname, source):
+    if app.builder.name == "latex":
+        source[0] = _emoji.sub("", source[0])
+
+from docutils import nodes
+
+def strip_emoji_doctree(app, doctree, docname):
+    if app.builder.name != "latex":
+        return
+    for node in list(doctree.findall(nodes.Text)):
+        text = node.astext()
+        cleaned = _emoji.sub("", text)
+        if cleaned != text:
+            node.parent.replace(node, nodes.Text(cleaned))
+

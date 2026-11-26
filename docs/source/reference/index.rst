@@ -13,11 +13,10 @@ Segmentation (case-by-case)
    :toctree: ../api/
    :template: autosummary.rst
 
-   totseg
    kidney_dixon
-   kidney_dixon_unetr
    rsf_dixon
    kidney_compartments_dixon
+   kidney_dixon_unetr
 
 
 Segmentation (batch)
@@ -30,6 +29,16 @@ Segmentation (batch)
    kidney_dixon_batch
    rsf_dixon_batch
    kidney_compartments_dixon_batch
+
+
+Segmentation (external)
+-----------------------
+
+.. autosummary::
+   :toctree: ../api/
+   :template: autosummary.rst
+
+   totseg
 
 
 Mapping
@@ -52,14 +61,17 @@ Preprocessing
    rsf_candidates
 
 
-Utilities
----------
+Data utilities
+--------------
 
 .. autosummary::
    :toctree: ../api/
    :template: autosummary.rst
    
-   clear_cache
    get_cache_dir
+   clear_cache
+   fetch
+   load_dixon_case
+   load_dixon_case_as_batch
 
 

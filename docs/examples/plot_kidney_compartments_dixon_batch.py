@@ -6,17 +6,16 @@
 
 # %% 
 import vreg
-import miblab_dl as dl
 from miblab_plot import mosaic_overlay
+import miblab_dl as dl
 
-from _data_loader import dixon_batch_case
 
 # %% [markdown]
 # ## Download data
 
 # %%
 case='Dixon'
-input_folder = dixon_batch_case(case)
+input_folder = dl.load_dixon_case_as_batch(case)
 output_folder = dl.get_cache_dir('Dixon_batch_results')
 
 # %% [markdown]

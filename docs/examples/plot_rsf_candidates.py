@@ -6,22 +6,20 @@
 
 # %% 
 import numpy as np
-import miblab_dl as dl
 from miblab_plot import mosaic_overlay
-
-from _data_loader import dixon_case
+import miblab_dl as dl
 
 # %% [markdown]
 # ## Download data
 
 # %%
-dixon_array, spacing = dixon_case()
+dixon_array, spacing = dl.load_dixon_case()
 
 # %% [markdown]
 # ## Predict kidney masks
 
 # %%
-kidneys = dl.kidney_dixon(dixon_array, verbose=False)
+kidneys = dl.kidney_dixon(dixon_array, spacing, verbose=False)
 
 # %% [markdown]
 # ## Compute rsf candidates
