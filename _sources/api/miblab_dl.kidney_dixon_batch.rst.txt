@@ -1,0 +1,10 @@
+﻿miblab\_dl.kidney\_dixon\_batch
+===============================
+
+
+.. currentmodule:: miblab_dl
+
+
+
+.. autofunction:: kidney_dixon_batch
+

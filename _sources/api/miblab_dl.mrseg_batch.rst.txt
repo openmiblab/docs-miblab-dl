@@ -1,0 +1,10 @@
+﻿miblab\_dl.mrseg\_batch
+=======================
+
+
+.. currentmodule:: miblab_dl
+
+
+
+.. autofunction:: mrseg_batch
+

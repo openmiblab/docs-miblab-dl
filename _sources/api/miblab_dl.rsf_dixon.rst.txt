@@ -1,0 +1,10 @@
+﻿miblab\_dl.rsf\_dixon
+=====================
+
+
+.. currentmodule:: miblab_dl
+
+
+
+.. autofunction:: rsf_dixon
+

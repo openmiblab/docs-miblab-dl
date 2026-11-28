@@ -1,0 +1,10 @@
+﻿miblab\_dl.totseg\_nii
+======================
+
+
+.. currentmodule:: miblab_dl
+
+
+
+.. autofunction:: totseg_nii
+

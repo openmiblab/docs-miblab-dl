@@ -1,0 +1,10 @@
+﻿miblab\_dl.load\_dixon\_case\_as\_batch
+=======================================
+
+
+.. currentmodule:: miblab_dl
+
+
+
+.. autofunction:: load_dixon_case_as_batch
+

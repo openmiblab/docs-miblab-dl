@@ -1,0 +1,10 @@
+﻿miblab\_dl.mrseg
+================
+
+
+.. currentmodule:: miblab_dl
+
+
+
+.. autofunction:: mrseg
+
