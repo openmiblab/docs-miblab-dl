@@ -39,6 +39,11 @@ Segmentation (external)
    :template: autosummary.rst
 
    totseg
+   totseg_nii
+   totseg_batch
+   mrseg
+   mrseg_nii
+   mrseg_batch
 
 
 Mapping

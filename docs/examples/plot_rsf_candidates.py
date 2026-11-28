@@ -13,7 +13,7 @@ import miblab_dl as dl
 # ## Download data
 
 # %%
-dixon_array, spacing = dl.load_dixon_case()
+dixon_array, spacing, _ = dl.load_dixon_case()
 
 # %% [markdown]
 # ## Predict kidney masks

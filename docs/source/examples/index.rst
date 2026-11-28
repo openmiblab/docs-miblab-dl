@@ -25,6 +25,16 @@ Batch prediction
    plot_kidney_compartments_dixon_batch
 
 
+External
+********
+
+.. toctree::
+   :maxdepth: 1
+   
+   plot_totseg
+   plot_mrseg
+
+
 Preprocessing
 *************
 
